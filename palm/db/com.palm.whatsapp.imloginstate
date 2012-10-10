@@ -1,0 +1,15 @@
+{
+    "id": "com.palm.whatsapp.imloginstate:1",
+    "extends": ["com.palm.imloginstate:1"],
+    "owner": "com.palm.service.whatsapp",
+    "indexes": [
+        {
+            "name": "byrevision",
+            "props": [{"name": "_rev"}]
+        },
+        { 
+       "name": "accountId", 
+       "props": [{ "name": "accountId"}]
+       }
+     ]
+}

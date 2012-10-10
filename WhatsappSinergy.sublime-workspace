@@ -1,0 +1,1439 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"return",
+				"returnValue"
+			],
+			[
+				"fu",
+				"future"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "service/lib/whatsapp.js",
+			"settings":
+			{
+				"buffer_size": 18480,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "service/commands/loginStateChanged.js",
+			"settings":
+			{
+				"buffer_size": 3655,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\"start\": true, \"replace\" : true, \"activity\": {\"name\": \"Whatsapp loginstate\", \"description\": \"Watch for changes to the imloginstate\", \"type\": {\"explicit\":true, \"power\":true, \"foreground\": true, \"persist\" : true }, \"requirements\": {\"internet\":true }, \"trigger\": {\"method\": \"palm://com.palm.db/watch\", \"key\": \"fired\", \"params\": {\"subscribe\": true, \"query\": {\"from\": \"com.palm.imloginstate:1\", \"where\": [{\"prop\":\"_rev\",\"op\": \">\",\"val\" : 0}] } } }, \"callback\": {\"method\": \"palm://com.palm.service.whatsapp/loginStateChanged\", \"params\": {} } } }",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "service/prologue.js",
+			"settings":
+			{
+				"buffer_size": 1216,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 84 files for \"_rev\"\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/etc/palm/activities/com.palm.service.whatsapp/com.palm.whatsapp.imloginstate:\n   20  				\"query\": {\n   21  					\"from\": \"com.palm.whatsapp.imloginstate:1\",\n   22: 					\"where\": [{\"prop\":\"_rev\",\"op\": \">\",\"val\":0}]\n   23  				}\n   24  			}\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/commands/loginStateChanged.js:\n   73  			\n   74  			future.result = { returnValue : true };\n   75: 			return createLoginStateActivity(loginState._rev);\n   76  		});\n   77  	});\n   ..\n  104  					\"query\": {\n  105  						\"from\": IM_LOGINSTATE_KIND,\n  106: 						\"where\": [{\"prop\":\"_rev\",\"op\": \">\",\"val\":rev}]\n  107  					}\n  108  				}\n\n/Users/gimco/Projects/WhatsappSinergy/palm/activities/com.palm.whatsapp.imloginstate:\n   20  				\"query\": {\n   21  					\"from\": \"com.palm.whatsapp.imloginstate:1\",\n   22: 					\"where\": [{\"prop\":\"_rev\",\"op\": \">\",\"val\":0}]\n   23  				}\n   24  			}\n\n/Users/gimco/Projects/WhatsappSinergy/palm/db/com.palm.whatsapp.imloginstate:\n    6          {\n    7              \"name\": \"byrevision\",\n    8:             \"props\": [{\"name\": \"_rev\"}]\n    9          },\n   10          { \n\n/Users/gimco/Projects/WhatsappSinergy/service/commands/loginStateChanged.js:\n   73  			\n   74  			future.result = { returnValue : true };\n   75: 			return createLoginStateActivity(loginState._rev);\n   76  		});\n   77  	});\n   ..\n  104  					\"query\": {\n  105  						\"from\": IM_LOGINSTATE_KIND,\n  106: 						\"where\": [{\"prop\":\"_rev\",\"op\": \">\",\"val\":rev}]\n  107  					}\n  108  				}\n\n7 matches across 5 files\n\n\nSearching 84 files for \"._\"\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/applications/com.palm.app.whatsapp.config/lib/utils.js:\n   10  var AjaxCall = Foundations.Comms.AjaxCall;\n   11  var Crypto = libraries[\"foundations.crypto\"];\n   12: var _ = libraries[\"underscore\"]._;\n   13  \n   14  \n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/prologue.js:\n    7  var Foundations = IMPORTS.foundations;\n    8  var AjaxCall = Foundations.Comms.AjaxCall;\n    9: var _ = IMPORTS.underscore._;\n   10  var Crypto = IMPORTS[\"foundations.crypto\"];\n   11  var xml2json = IMPORTS[\"foundations.xml\"].xml2json;\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/commands/loginStateChanged.js:\n   73  			\n   74  			future.result = { returnValue : true };\n   75: 			return createLoginStateActivity(loginState._rev);\n   76  		});\n   77  	});\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/commands/sendMessage.js:\n   22  		for(var i = 0; i < f1.result.results.length; i++) {\n   23  			var msg = f1.result.results[i];\n   24: 			msg._ref = undefined;\n   25  			var username = msg.to[0].addr;\n   26  			var query = {\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/lib/utils.js:\n   55                  var chr1, chr2, chr3, enc1, enc2, enc3, enc4;\n   56                  var i = 0;\n   57:                 input = Base64._utf8_encode(input);\n   58                  while (i < input.length) {\n   59                          chr1 = input.charCodeAt(i++);\n   ..\n   74  \n   75                          output = output +\n   76:                         this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +\n   77:                         this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);\n   78                  }\n   79                  return output;\n   ..\n   90                  while (i < input.length) {\n   91  \n   92:                         enc1 = this._keyStr.indexOf(input.charAt(i++));\n   93:                         enc2 = this._keyStr.indexOf(input.charAt(i++));\n   94:                         enc3 = this._keyStr.indexOf(input.charAt(i++));\n   95:                         enc4 = this._keyStr.indexOf(input.charAt(i++));\n   96  \n   97                          chr1 = (enc1 << 2) | (enc2 >> 4);\n   ..\n  108                          }\n  109                  }\n  110:                 output = Base64._utf8_decode(output);\n  111  \n  112                  return output;\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/lib/whatsappXMPP.js:\n   15  \n   16  	this.conn.setTimeout(WAZ.XMPP.TIMEOUT);\n   17: 	this.conn.on(\"connect\", this._onconnect.bind(this));\n   18: 	this.conn.on(\"timeout\", this._ontimeout.bind(this));\n   19: 	this.conn.on(\"data\", this._ondata.bind(this));\n   20: 	this.conn.on(\"end\", this._onend.bind(this));\n   21: 	this.conn.on(\"error\", this._onend.bind(this));\n   22  	\n   23  	this.syncFuture = new Future().immediate({ ok : false });\n   ..\n   38  		this.conn.end();\n   39  	} else {\n   40: 		this._onend();\n   41  	}\n   42  };\n   ..\n   54  \n   55  // private\n   56: WAZ.XMPP.prototype._onconnect = function () {\n   57  	// Socket connected! send hello\n   58  	this.write(WAZ.Messages.XMPP_HELLO);\n   ..\n   62  };\n   63  \n   64: WAZ.XMPP.prototype._ontimeout = function () {\n   65  	console.log(\"Intentar pedir presence, o enviar ping 0x00\");\n   66  	this.write(WAZ.Messages.XMPP_PRESENCE_AVAILABLE);\n   67  };\n   68  \n   69: WAZ.XMPP.prototype._ondata = function (data) {\n   70  	console.log(\"Recibido \" + data);\n   71  	this.parser.parse(data);\n   72  };\n   73  \n   74: WAZ.XMPP.prototype._onend = function () {\n   75  	console.log(\"Cerrado\");\n   76  	this.onOffline();\n   ..\n  101  \n  102  \n  103: WAZ.XMPP.prototype._end_challenge = function () {\n  104  	this.write(WAZ.Messages.XMPP_RESPONSE({challenge : this.text, imei : this.transport.udid, username : this.username}));\n  105  }\n  106  \n  107: WAZ.XMPP.prototype._end_success = function () {\n  108  	this.onLoginSuccess();\n  109  };\n  110  \n  111: WAZ.XMPP.prototype._start_presence = function (atts) {\n  112  	if (atts.status == \"dirty\") {\n  113  		this.write(WAZ.Messages.XMPP_PRESENCE_AVAILABLE);\n  ...\n  119  };\n  120  \n  121: WAZ.XMPP.prototype._start_notify = function (atts) {\n  122  	this.name = atts.name;\n  123  };\n  124  \n  125: WAZ.XMPP.prototype._start_request = function (atts) {\n  126  	this.mode = \"request\";\n  127  };\n  128  \n  129: WAZ.XMPP.prototype._end_body = function () {\n  130  	this.body = this.text;\n  131  };\n  132  \n  133: WAZ.XMPP.prototype._end_id = function () {\n  134  	this.id = this.text;\n  135  	this.mode = \"confirm-send\";\n  136  };\n  137  \n  138: WAZ.XMPP.prototype._end_received = function () {\n  139  	this.mode = \"confirm-ack\";\n  140  };\n  141  \n  142: WAZ.XMPP.prototype._start_message = function (atts) {\n  143  	this.from = atts.from;\n  144  	this.id = atts.id;\n  145  };\n  146  \n  147: WAZ.XMPP.prototype._end_message = function () {\n  148  	\n  149  	if (this.mode == \"request\" && this.body) {\n  ...\n  163  };\n  164  \n  165: WAZ.XMPP.prototype._start_iq = function (atts) {\n  166  	this.from = atts.from;\n  167  	this.type = atts.type;\n  168  };\n  169  \n  170: WAZ.XMPP.prototype._end_iq = function () {\n  171  	if (this.type == \"result\" && this.from) {\n  172  		this.syncFuture.nest(this.onPresence(this.from));\n\n/Users/gimco/Projects/WhatsappSinergy/app/lib/utils.js:\n   10  var AjaxCall = Foundations.Comms.AjaxCall;\n   11  var Crypto = libraries[\"foundations.crypto\"];\n   12: var _ = libraries[\"underscore\"]._;\n   13  \n   14  \n\n/Users/gimco/Projects/WhatsappSinergy/service/prologue.js:\n    7  var Foundations = IMPORTS.foundations;\n    8  var AjaxCall = Foundations.Comms.AjaxCall;\n    9: var _ = IMPORTS.underscore._;\n   10  var Crypto = IMPORTS[\"foundations.crypto\"];\n   11  var xml2json = IMPORTS[\"foundations.xml\"].xml2json;\n\n/Users/gimco/Projects/WhatsappSinergy/service/commands/loginStateChanged.js:\n   73  			\n   74  			future.result = { returnValue : true };\n   75: 			return createLoginStateActivity(loginState._rev);\n   76  		});\n   77  	});\n\n/Users/gimco/Projects/WhatsappSinergy/service/commands/sendMessage.js:\n   22  		for(var i = 0; i < f1.result.results.length; i++) {\n   23  			var msg = f1.result.results[i];\n   24: 			msg._ref = undefined;\n   25  			var username = msg.to[0].addr;\n   26  			var query = {\n   ..\n   52  					msg.status = \"failed\";\n   53  				}\n   54: 				msg._ref = undefined;\n   55  				f.nest(DB.merge([ msg ]));\n   56  			});\n\n/Users/gimco/Projects/WhatsappSinergy/service/lib/utils.js:\n   55                  var chr1, chr2, chr3, enc1, enc2, enc3, enc4;\n   56                  var i = 0;\n   57:                 input = Base64._utf8_encode(input);\n   58                  while (i < input.length) {\n   59                          chr1 = input.charCodeAt(i++);\n   ..\n   74  \n   75                          output = output +\n   76:                         this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +\n   77:                         this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);\n   78                  }\n   79                  return output;\n   ..\n   90                  while (i < input.length) {\n   91  \n   92:                         enc1 = this._keyStr.indexOf(input.charAt(i++));\n   93:                         enc2 = this._keyStr.indexOf(input.charAt(i++));\n   94:                         enc3 = this._keyStr.indexOf(input.charAt(i++));\n   95:                         enc4 = this._keyStr.indexOf(input.charAt(i++));\n   96  \n   97                          chr1 = (enc1 << 2) | (enc2 >> 4);\n   ..\n  108                          }\n  109                  }\n  110:                 output = Base64._utf8_decode(output);\n  111  \n  112                  return output;\n\n/Users/gimco/Projects/WhatsappSinergy/service/lib/whatsappXMPP.js:\n   15  \n   16  	this.conn.setTimeout(WAZ.XMPP.TIMEOUT);\n   17: 	this.conn.on(\"connect\", this._onconnect.bind(this));\n   18: 	this.conn.on(\"timeout\", this._ontimeout.bind(this));\n   19: 	this.conn.on(\"data\", this._ondata.bind(this));\n   20: 	this.conn.on(\"end\", this._onend.bind(this));\n   21: 	this.conn.on(\"error\", this._onend.bind(this));\n   22  	\n   23  	this.syncFuture = new Future().immediate({ ok : false });\n   ..\n   38  		this.conn.end();\n   39  	} else {\n   40: 		this._onend();\n   41  	}\n   42  };\n   ..\n   54  \n   55  // private\n   56: WAZ.XMPP.prototype._onconnect = function () {\n   57  	// Socket connected! send hello\n   58  	this.write(WAZ.Messages.XMPP_HELLO);\n   ..\n   62  };\n   63  \n   64: WAZ.XMPP.prototype._ontimeout = function () {\n   65  	console.log(\"Intentar pedir presence, o enviar ping 0x00\");\n   66  	this.write(WAZ.Messages.XMPP_PRESENCE_AVAILABLE);\n   67  };\n   68  \n   69: WAZ.XMPP.prototype._ondata = function (data) {\n   70  	console.log(\"Recibido \" + data);\n   71  	this.parser.parse(data);\n   72  };\n   73  \n   74: WAZ.XMPP.prototype._onend = function () {\n   75  	console.log(\"Cerrado\");\n   76  	this.onOffline();\n   ..\n  101  \n  102  \n  103: WAZ.XMPP.prototype._end_challenge = function () {\n  104  	this.write(WAZ.Messages.XMPP_RESPONSE({challenge : this.text, imei : this.transport.udid, username : this.username}));\n  105  }\n  106  \n  107: WAZ.XMPP.prototype._end_success = function () {\n  108  	this.onLoginSuccess();\n  109  };\n  110  \n  111: WAZ.XMPP.prototype._start_presence = function (atts) {\n  112  	if (atts.status == \"dirty\") {\n  113  		this.write(WAZ.Messages.XMPP_PRESENCE_AVAILABLE);\n  ...\n  119  };\n  120  \n  121: WAZ.XMPP.prototype._start_notify = function (atts) {\n  122  	this.name = atts.name;\n  123  };\n  124  \n  125: WAZ.XMPP.prototype._start_request = function (atts) {\n  126  	this.mode = \"request\";\n  127  };\n  128  \n  129: WAZ.XMPP.prototype._end_body = function () {\n  130  	this.body = this.text;\n  131  };\n  132  \n  133: WAZ.XMPP.prototype._end_id = function () {\n  134  	this.id = this.text;\n  135  	this.mode = \"confirm-send\";\n  136  };\n  137  \n  138: WAZ.XMPP.prototype._end_received = function () {\n  139  	this.mode = \"confirm-ack\";\n  140  };\n  141  \n  142: WAZ.XMPP.prototype._start_message = function (atts) {\n  143  	this.from = atts.from;\n  144  	this.id = atts.id;\n  145  };\n  146  \n  147: WAZ.XMPP.prototype._end_message = function () {\n  148  	\n  149  	if (this.mode == \"request\" && this.body) {\n  ...\n  163  };\n  164  \n  165: WAZ.XMPP.prototype._start_iq = function (atts) {\n  166  	this.from = atts.from;\n  167  	this.type = atts.type;\n  168  };\n  169  \n  170: WAZ.XMPP.prototype._end_iq = function () {\n  171  	if (this.type == \"result\" && this.from) {\n  172  		this.syncFuture.nest(this.onPresence(this.from));\n\n73 matches across 12 files\n\n\nSearching 84 files for \"enviando a\"\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/lib/whatsappEvents.js:\n  137  		\n  138  		this.write(WAZ.Messages.XMPP_MESSAGE_RECEIVED({dest : from.split('@')[0], id : id}));\n  139: 		console.log(\"Enviando ACK \" + from + \" - \" + id);\n  140  		future.result = { returnValue : true };\n  141  	}));\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/lib/whatsappXMPP.js:\n   44  WAZ.XMPP.prototype.sendMessage = function (id, dest, txt) {\n   45  	if (this.conn) {\n   46: 		console.log(\"Enviando a \" + id + \" : \" + dest + \" : \" + txt);\n   47  		this.write(WAZ.Messages.XMPP_MESSAGE({id : id, dest : dest, txt : txt}));\n   48  	} else {\n\n/Users/gimco/Projects/WhatsappSinergy/service/lib/whatsappEvents.js:\n  137  		\n  138  		this.write(WAZ.Messages.XMPP_MESSAGE_RECEIVED({dest : from.split('@')[0], id : id}));\n  139: 		console.log(\"Enviando ACK \" + from + \" - \" + id);\n  140  		future.result = { returnValue : true };\n  141  	}));\n\n/Users/gimco/Projects/WhatsappSinergy/service/lib/whatsappXMPP.js:\n   44  WAZ.XMPP.prototype.sendMessage = function (id, dest, txt) {\n   45  	if (this.conn) {\n   46: 		console.log(\"Enviando a \" + id + \" : \" + dest + \" : \" + txt);\n   47  		this.write(WAZ.Messages.XMPP_MESSAGE({id : id, dest : dest, txt : txt}));\n   48  	} else {\n\n4 matches across 4 files\n\n\nSearching 84 files for \"PalmCall\"\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/applications/com.palm.app.whatsapp.config/app/assistants/check-assistant.js:\n   51  	\n   52  	// Calculate a udid\n   53: 	var future = PalmCall.call(\"palm://com.palm.preferences/systemProperties\", \"Get\",\n   54  			{\"key\":\"com.palm.properties.nduid\"}).then(this, function(future){\n   55  		if(future.result.returnValue) {\n   56  			this.model.udid = Crypto.MD5.hex_md5(future.result[\"com.palm.properties.nduid\"]);\n   57  			// this.model.udid = \"000000000000000\";\n   58: 			future.nest(PalmCall.call(\"palm://com.palm.service.whatsapp\", \"checkNumber\", this.model));\n   59  		}\n   60  	});\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/applications/com.palm.app.whatsapp.config/app/assistants/register-assistant.js:\n   29  	this.controller.get(\"confirmButton\").mojo.activate();\n   30  \n   31: 	var future = PalmCall.call(\"palm://com.palm.service.whatsapp\", \"registerNumber\", this.model);\n   32  	future.then(this, function (future) {\n   33  		this.controller.stageController.popScene(future.result.registered);\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/applications/com.palm.app.whatsapp.config/lib/utils.js:\n    7  \n    8  var Foundations = libraries[\"foundations\"];\n    9: var PalmCall = Foundations.Comms.PalmCall;\n   10  var AjaxCall = Foundations.Comms.AjaxCall;\n   11  var Crypto = libraries[\"foundations.crypto\"];\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/prologue.js:\n   12  var DB = Foundations.Data.DB;\n   13  var TempDB = Foundations.Data.TempDB;\n   14: var PalmCall = Foundations.Comms.PalmCall;\n   15  var Future = Foundations.Control.Future;\n   16  \n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/commands/loginStateChanged.js:\n   82  \n   83  function createLoginStateActivity(rev) {\n   84: 	return PalmCall.call(\"palm://com.palm.activitymanager/\",  \"create\", {\n   85  		\"start\": true,\n   86  		\"replace\" : true,\n\n/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/commands/sendMessage.js:\n   69  \n   70  function createSendMessageActivity () {\n   71: 	return PalmCall.call(\"palm://com.palm.activitymanager/\",  \"create\", {\n   72  		\"start\": true,\n   73  		\"replace\":true,\n\n/Users/gimco/Projects/WhatsappSinergy/app/app/assistants/check-assistant.js:\n   51  	\n   52  	// Calculate a udid\n   53: 	var future = PalmCall.call(\"palm://com.palm.preferences/systemProperties\", \"Get\",\n   54  			{\"key\":\"com.palm.properties.nduid\"}).then(this, function(future){\n   55  		if(future.result.returnValue) {\n   56  			this.model.udid = Crypto.MD5.hex_md5(future.result[\"com.palm.properties.nduid\"]);\n   57  			// this.model.udid = \"000000000000000\";\n   58: 			future.nest(PalmCall.call(\"palm://com.palm.service.whatsapp\", \"checkNumber\", this.model));\n   59  		}\n   60  	});\n\n/Users/gimco/Projects/WhatsappSinergy/app/app/assistants/register-assistant.js:\n   29  	this.controller.get(\"confirmButton\").mojo.activate();\n   30  \n   31: 	var future = PalmCall.call(\"palm://com.palm.service.whatsapp\", \"registerNumber\", this.model);\n   32  	future.then(this, function (future) {\n   33  		this.controller.stageController.popScene(future.result.registered);\n\n/Users/gimco/Projects/WhatsappSinergy/app/lib/utils.js:\n    7  \n    8  var Foundations = libraries[\"foundations\"];\n    9: var PalmCall = Foundations.Comms.PalmCall;\n   10  var AjaxCall = Foundations.Comms.AjaxCall;\n   11  var Crypto = libraries[\"foundations.crypto\"];\n\n/Users/gimco/Projects/WhatsappSinergy/service/prologue.js:\n   12  var DB = Foundations.Data.DB;\n   13  var TempDB = Foundations.Data.TempDB;\n   14: var PalmCall = Foundations.Comms.PalmCall;\n   15  var Future = Foundations.Control.Future;\n   16  \n\n/Users/gimco/Projects/WhatsappSinergy/service/commands/loginStateChanged.js:\n   82  \n   83  function createLoginStateActivity(rev) {\n   84: 	return PalmCall.call(\"palm://com.palm.activitymanager/\",  \"create\", {\n   85  		\"start\": true,\n   86  		\"replace\" : true,\n\n/Users/gimco/Projects/WhatsappSinergy/service/commands/sendMessage.js:\n   69  \n   70  function createSendMessageActivity () {\n   71: 	return PalmCall.call(\"palm://com.palm.activitymanager/\",  \"create\", {\n   72  		\"start\": true,\n   73  		\"replace\":true,\n\n18 matches across 12 files\n",
+			"settings":
+			{
+				"buffer_size": 18077,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": ".tmp/usr/palm/services/com.palm.service.whatsapp/lib/whatsappXMPP.js",
+			"settings":
+			{
+				"buffer_size": 4302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "service/lib/whatsappEvents.js",
+			"settings":
+			{
+				"buffer_size": 6509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.txt",
+			"settings":
+			{
+				"buffer_size": 47309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "service/commands/sendMessage.js",
+			"settings":
+			{
+				"buffer_size": 2974,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n		\"start\": true,\n		\"replace\":true,\n		\"activity\": {\n			\"name\": \"Whatsapp pending messages watch\",\n			\"description\": \"Watch for changes to the immessage\",\n			\"type\": {\n	          	\"foreground\": true,\n	          	\"power\":true,\n	          	\"powerDebounce\":true,\n	          	\"explicit\":true,\n	          	\"persist\" : true\n	        },\n	        \"requirements\": {\n			    \"internet\": true\n			},\n	        \"trigger\": {\n				\"method\": \"palm://com.palm.db/watch\",\n				\"key\": \"fired\",\n				\"params\": {\n					\"subscribe\": true,\n					\"query\": {\n						\"from\": \"com.palm.whatsapp.immessage:1\",\n						\"where\": [\n							{\"op\":\"=\",\"prop\":\"status\",\"val\":\"pending\"},\n							{\"op\":\"=\",\"prop\":\"folder\",\"val\":\"outbox\"}\n							]\n					}\n				}\n			},\n			\"callback\": {\n				\"method\": \"palm://com.palm.service.whatsapp/sendMessage\",\n				\"params\": {}\n			}\n		}\n	}",
+			"settings":
+			{
+				"buffer_size": 826,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "service/sources.json",
+			"settings":
+			{
+				"buffer_size": 841,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "service/commands/incomingMessage.js",
+			"settings":
+			{
+				"buffer_size": 272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 1691,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "palm/db/com.palm.whatsapp.immessage",
+			"settings":
+			{
+				"buffer_size": 689,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app/assistants/register-assistant.js",
+			"settings":
+			{
+				"buffer_size": 1059,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/app/assistants/check-assistant.js",
+			"settings":
+			{
+				"buffer_size": 3008,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "service/commands/checkNumber.js",
+			"settings":
+			{
+				"buffer_size": 2352,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "service/commands/onCreate.js",
+			"settings":
+			{
+				"buffer_size": 531,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "palm/activities/com.palm.whatsapp.imloginstate",
+			"settings":
+			{
+				"buffer_size": 672,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 27.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 453.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/gimco/Projects/WhatsappSinergy/.gitignore",
+		"/Users/gimco/Projects/WhatsappSinergy/service/commands/onCreate.js",
+		"/Users/gimco/Projects/WhatsappSinergy/app/lib/utils.js",
+		"/Users/gimco/Projects/WhatsappSinergy/service/lib/utils.js",
+		"/Users/gimco/Projects/WhatsappSinergy/service/services.json",
+		"/Users/gimco/Projects/WhatsappSinergy/service/commands/sendMessage.js",
+		"/Users/gimco/Projects/WhatsappSinergy/.tmp/usr/palm/services/com.palm.service.whatsapp/commands/sendMessage.js",
+		"/Users/gimco/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/gimco/Documents/workspace/whatsapp-2.8-smali/smali/com/whatsapp/hz.smali"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"args.udid",
+			"f1",
+			"PalmCall",
+			"enviando a",
+			"._",
+			"_rev",
+			"Enviando a",
+			"Send messages:",
+			"a()Lcom/whatsapp/hz",
+			"->a()Lcom/whatsapp/hz;",
+			"method",
+			"->b()Lcom",
+			"->b()",
+			"method",
+			"Lcom/whatsapp/hz;->a:Ljava/lang/String",
+			"cond_2",
+			"->e(I)",
+			"d(I)I",
+			"cond_0",
+			"cond_2",
+			"whatsapp",
+			"->e(I)",
+			"goto_0",
+			"sswitch_1",
+			"sswitch_data_0",
+			"cond_2",
+			"0xf5",
+			"->b()",
+			"goto_0",
+			"(Ljava/lang/String;[Lcom/whatsapp/dz;[B)V",
+			"sswitch_1",
+			"sswitch_data_0",
+			"e(I)Ljava/lang/String;",
+			"cond_3",
+			"cond_4",
+			"v1",
+			"a([BILjava/io/InputStream;)V",
+			"a([BLjava/io/InputStream;)V",
+			"a(Ljava/io/InputStream;)I",
+			" a(I)Z",
+			"cond_4",
+			"0xfc",
+			"java/lang/String;",
+			"java/lang/String",
+			"0xfc",
+			"->a(I",
+			" a(I",
+			"cond_4",
+			"0xfc",
+			"->d(I",
+			"b(Ljava/io/InputStream;)I",
+			"f,Ljava/lang/StringBuilder;);",
+			"Ljava",
+			"(Ljava/io/InputStream;)I",
+			"a(L",
+			".method private d(",
+			" d(",
+			".method private d(",
+			".method private a(",
+			".method private d(",
+			"goto_0",
+			"cond_5",
+			"cond_6",
+			"goto_0",
+			"0xfc",
+			"cond_0",
+			".method private d(",
+			"cond_0",
+			"nez",
+			"cond_0",
+			"->b("
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "service/lib/whatsapp.js",
+					"settings":
+					{
+						"buffer_size": 18480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15705,
+								15780
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9594.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "service/commands/loginStateChanged.js",
+					"settings":
+					{
+						"buffer_size": 3655,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2943,
+								3650
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1688.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								540,
+								540
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 1502.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "service/prologue.js",
+					"settings":
+					{
+						"buffer_size": 1216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								344,
+								344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"settings":
+					{
+						"buffer_size": 18077,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										261,
+										265
+									],
+									[
+										545,
+										549
+									],
+									[
+										679,
+										683
+									],
+									[
+										930,
+										934
+									],
+									[
+										1157,
+										1161
+									],
+									[
+										1393,
+										1397
+									],
+									[
+										1527,
+										1531
+									],
+									[
+										1888,
+										1890
+									],
+									[
+										2138,
+										2140
+									],
+									[
+										2484,
+										2486
+									],
+									[
+										2746,
+										2748
+									],
+									[
+										3072,
+										3074
+									],
+									[
+										3303,
+										3305
+									],
+									[
+										3331,
+										3333
+									],
+									[
+										3390,
+										3392
+									],
+									[
+										3418,
+										3420
+									],
+									[
+										3610,
+										3612
+									],
+									[
+										3689,
+										3691
+									],
+									[
+										3768,
+										3770
+									],
+									[
+										3847,
+										3849
+									],
+									[
+										4059,
+										4061
+									],
+									[
+										4329,
+										4331
+									],
+									[
+										4390,
+										4392
+									],
+									[
+										4448,
+										4450
+									],
+									[
+										4502,
+										4504
+									],
+									[
+										4557,
+										4559
+									],
+									[
+										4715,
+										4717
+									],
+									[
+										4803,
+										4805
+									],
+									[
+										4965,
+										4967
+									],
+									[
+										5162,
+										5164
+									],
+									[
+										5308,
+										5310
+									],
+									[
+										5437,
+										5439
+									],
+									[
+										5638,
+										5640
+									],
+									[
+										5742,
+										5744
+									],
+									[
+										5925,
+										5927
+									],
+									[
+										6034,
+										6036
+									],
+									[
+										6144,
+										6146
+									],
+									[
+										6245,
+										6247
+									],
+									[
+										6378,
+										6380
+									],
+									[
+										6487,
+										6489
+									],
+									[
+										6624,
+										6626
+									],
+									[
+										6763,
+										6765
+									],
+									[
+										6899,
+										6901
+									],
+									[
+										7231,
+										7233
+									],
+									[
+										7440,
+										7442
+									],
+									[
+										7745,
+										7747
+									],
+									[
+										7966,
+										7968
+									],
+									[
+										8118,
+										8120
+									],
+									[
+										8390,
+										8392
+									],
+									[
+										8621,
+										8623
+									],
+									[
+										8649,
+										8651
+									],
+									[
+										8708,
+										8710
+									],
+									[
+										8736,
+										8738
+									],
+									[
+										8928,
+										8930
+									],
+									[
+										9007,
+										9009
+									],
+									[
+										9086,
+										9088
+									],
+									[
+										9165,
+										9167
+									],
+									[
+										9377,
+										9379
+									],
+									[
+										9606,
+										9608
+									],
+									[
+										9667,
+										9669
+									],
+									[
+										9725,
+										9727
+									],
+									[
+										9779,
+										9781
+									],
+									[
+										9834,
+										9836
+									],
+									[
+										9992,
+										9994
+									],
+									[
+										10080,
+										10082
+									],
+									[
+										10242,
+										10244
+									],
+									[
+										10439,
+										10441
+									],
+									[
+										10585,
+										10587
+									],
+									[
+										10714,
+										10716
+									],
+									[
+										10915,
+										10917
+									],
+									[
+										11019,
+										11021
+									],
+									[
+										11202,
+										11204
+									],
+									[
+										11311,
+										11313
+									],
+									[
+										11421,
+										11423
+									],
+									[
+										11522,
+										11524
+									],
+									[
+										11655,
+										11657
+									],
+									[
+										11764,
+										11766
+									],
+									[
+										11901,
+										11903
+									],
+									[
+										12040,
+										12042
+									],
+									[
+										12176,
+										12178
+									],
+									[
+										12614,
+										12624
+									],
+									[
+										12936,
+										12946
+									],
+									[
+										13282,
+										13292
+									],
+									[
+										13563,
+										13573
+									],
+									[
+										13962,
+										13970
+									],
+									[
+										14312,
+										14320
+									],
+									[
+										14638,
+										14646
+									],
+									[
+										15021,
+										15029
+									],
+									[
+										15050,
+										15058
+									],
+									[
+										15357,
+										15365
+									],
+									[
+										15386,
+										15394
+									],
+									[
+										15642,
+										15650
+									],
+									[
+										15939,
+										15947
+									],
+									[
+										16187,
+										16195
+									],
+									[
+										16537,
+										16545
+									],
+									[
+										16811,
+										16819
+									],
+									[
+										17142,
+										17150
+									],
+									[
+										17171,
+										17179
+									],
+									[
+										17437,
+										17445
+									],
+									[
+										17466,
+										17474
+									],
+									[
+										17681,
+										17689
+									],
+									[
+										17937,
+										17945
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								17940,
+								17940
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 4,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 11325.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": ".tmp/usr/palm/services/com.palm.service.whatsapp/lib/whatsappXMPP.js",
+					"settings":
+					{
+						"buffer_size": 4302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1216,
+								1221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1332.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "service/lib/whatsappEvents.js",
+					"settings":
+					{
+						"buffer_size": 6509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1732,
+								1732
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 508.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "README.txt",
+					"settings":
+					{
+						"buffer_size": 47309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7916,
+								7916
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "service/commands/sendMessage.js",
+					"settings":
+					{
+						"buffer_size": 2974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								666,
+								666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"settings":
+					{
+						"buffer_size": 826,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								317,
+								329
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "service/sources.json",
+					"settings":
+					{
+						"buffer_size": 841,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								838,
+								838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "service/commands/incomingMessage.js",
+					"settings":
+					{
+						"buffer_size": 272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Makefile",
+					"settings":
+					{
+						"buffer_size": 1691,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								157,
+								157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "palm/db/com.palm.whatsapp.immessage",
+					"settings":
+					{
+						"buffer_size": 689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								332,
+								332
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "app/app/assistants/register-assistant.js",
+					"settings":
+					{
+						"buffer_size": 1059,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "app/app/assistants/check-assistant.js",
+					"settings":
+					{
+						"buffer_size": 3008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1895,
+								1899
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "service/commands/checkNumber.js",
+					"settings":
+					{
+						"buffer_size": 2352,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								254
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "service/commands/onCreate.js",
+					"settings":
+					{
+						"buffer_size": 531,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "palm/activities/com.palm.whatsapp.imloginstate",
+					"settings":
+					{
+						"buffer_size": 672,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								579,
+								579
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 148.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"event",
+				"service/lib/whatsappEvents.js"
+			],
+			[
+				"ma",
+				"Makefile"
+			],
+			[
+				"even",
+				"service/lib/whatsappEvents.js"
+			],
+			[
+				"imlogi",
+				"palm/activities/com.palm.whatsapp.imloginstate"
+			],
+			[
+				"login",
+				"service/commands/loginStateChanged.js"
+			],
+			[
+				"whatse",
+				"service/lib/whatsappEvents.js"
+			],
+			[
+				"make",
+				"Makefile"
+			],
+			[
+				"oncre",
+				"service/commands/onCreate.js"
+			],
+			[
+				"whats",
+				"service/lib/whatsapp.js"
+			],
+			[
+				"check",
+				"service/commands/checkNumber.js"
+			],
+			[
+				"assis",
+				"app/app/assistants/check-assistant.js"
+			],
+			[
+				"regis",
+				"app/app/assistants/register-assistant.js"
+			],
+			[
+				"onc",
+				"service/commands/onCreate.js"
+			],
+			[
+				"send",
+				"service/commands/sendMessage.js"
+			],
+			[
+				"sen",
+				"service/commands/sendMessage.js"
+			],
+			[
+				"pro",
+				"service/prologue.js"
+			],
+			[
+				"source",
+				"service/sources.json"
+			],
+			[
+				"inco",
+				"service/commands/incomingMessage.js"
+			],
+			[
+				"sour",
+				"service/sources.json"
+			],
+			[
+				"utils",
+				"service/lib/utils.js"
+			],
+			[
+				"uti",
+				"app/lib/utils.js"
+			],
+			[
+				"json",
+				"service/sources.json"
+			],
+			[
+				"servi",
+				"service/services.json"
+			],
+			[
+				"prol",
+				"service/prologue.js"
+			],
+			[
+				"read",
+				"README.txt"
+			],
+			[
+				"logi",
+				"service/commands/loginStateChanged.js"
+			],
+			[
+				"wh",
+				"service/lib/whatsapp.js"
+			],
+			[
+				"ay.",
+				"smali/com/whatsapp/ay.smali"
+			],
+			[
+				"dz",
+				"smali/com/whatsapp/dz.smali"
+			],
+			[
+				"hz",
+				"smali/com/whatsapp/hz.smali"
+			],
+			[
+				"yx",
+				"smali/com/whatsapp/yx.smali"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

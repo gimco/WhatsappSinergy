@@ -1,0 +1,20 @@
+[
+ { "library" : {"name" : "foundations", "version" : "1.0" }},
+ { "library" : {"name" : "foundations.crypto", "version" : "1.0" }},
+ { "library" : {"name" : "foundations.xml", "version" : "1.0" }},
+ { "library" : {"name" : "underscore", "version" : "1.0" }},
+ { "source" : "prologue.js" },
+ { "source" : "lib/utils.js" },
+ { "source" : "lib/whatsapp.js" },
+ { "source" : "lib/whatsappXMPP.js" },
+ { "source" : "lib/whatsappEvents.js" },
+ { "source" : "commands/checkNumber.js" },
+ { "source" : "commands/registerNumber.js" },
+ { "source" : "commands/onCreate.js" },
+ { "source" : "commands/onEnabled.js" },
+ { "source" : "commands/onDelete.js" },
+ { "source" : "commands/onCapabilitiesChanged.js" },
+ { "source" : "commands/loginStateChanged.js" },
+ { "source" : "commands/incomingMessage.js" },
+ { "source" : "commands/sendMessage.js" }
+]

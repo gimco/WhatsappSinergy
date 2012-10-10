@@ -1,0 +1,16 @@
+[
+	 {
+		 "source": "lib/utils.js"
+	 },
+	{
+		"source": "lib/whatsapp.js"
+	},
+    {
+        "scenes": "check",
+        "source": "app/assistants/check-assistant.js"
+    },
+    {
+    	"scenes": "register",
+    	"source": "app/assistants/register-assistant.js"
+    }
+]

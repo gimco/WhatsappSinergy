@@ -1,0 +1,15 @@
+{
+    "id": "com.palm.whatsapp.imcontact:1",
+    "owner": "com.palm.service.whatsapp",
+    "sync": true,
+    "indexes": [ { 
+       "name": "accountId", 
+       "props": [{ "name": "accountId"}]
+       },
+       {
+       "name" : "remoteId",
+       "props" : [ {"name" : "accountId"}, {"name" : "remoteId"} ]
+       }
+    ], 
+    "extends": ["com.palm.contact:1"]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "com.palm.whatsapp.immessage:1",
+    "extends": ["com.palm.immessage:1"],
+    "owner": "com.palm.service.whatsapp",
+    "sync" : true,
+    "indexes": [
+        {
+            "name": "outgoingMsg",
+            "props": [{"name": "folder"},{"name": "status"}]
+        },
+        {
+            "name": "outgoingMsgTimestamp",
+            "props": [{"name": "folder"},{"name": "status"},{"name": "localTimestamp"}]
+        },
+        {
+            "name": "serviceAndUsername",
+            "props": [{"name": "serviceName"},{"name": "username"}]
+        },
+        {
+            "name": "byAck",
+            "props": [{"name": "localTimestamp"}, {"name": "ack"}]
+        }
+    ]
+}

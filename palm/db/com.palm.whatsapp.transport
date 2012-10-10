@@ -1,0 +1,13 @@
+{
+    "id": "com.palm.whatsapp.transport:1",
+    "owner": "com.palm.service.whatsapp",
+    "sync": true,
+    "indexes": [ { 
+       "name": "accountId", 
+       "props": [{ "name": "accountId"}]
+       },
+       { 
+       "name": "username", 
+       "props": [{ "name": "username"}]
+       } ]
+}

@@ -1,0 +1,38 @@
+{
+    "templateId": "com.palm.whatsapp",
+    "loc_name": "G Whatsapp",
+    "readPermissions": ["com.palm.service.whatsapp"],
+    "writePermissions": ["com.palm.service.whatsapp"],
+	"validator": {
+		"customUI": {
+			"appId":"com.palm.app.whatsapp.config",
+			"name":"check"
+		}
+	},
+    "onCapabiltiesChanged" : "palm://com.palm.service.whatsapp/onCapabiltiesChanged",		
+    "icon": {
+		"loc_32x32": "images/whatsapp32.png",
+		"loc_48x48": "images/whatsapp48.png"
+	},	
+    "capabilityProviders": [{
+		"capability": "MESSAGING",
+		"capabilitySubtype": "IM",
+		"id"		: "com.palm.whatsapp.capability.messaging",
+		"loc_shortName": "WHATSAPP",                                      
+        "icon": {                                                     
+                 "loc_32x32": "images/whatsapp32.png",          
+                 "loc_48x48": "images/whatsapp48.png",          
+                 "splitter": "images/whatsapp32.png"   
+        },
+		"onEnabled" : "palm://com.palm.service.whatsapp/onEnabled",
+		"onCreate"  : "palm://com.palm.service.whatsapp/onCreate",  
+		"onDelete"  : "palm://com.palm.service.whatsapp/onDelete",
+		"readOnlyData": true,
+		"serviceName":"type_whatsapp",
+		"dbkinds": {
+			"imcommand": "com.palm.whatsapp.imcommand:1",
+			"immessage": "com.palm.whatsapp.immessage:1"
+		}
+	}]
+}
+

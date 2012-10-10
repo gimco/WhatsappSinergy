@@ -1,0 +1,11 @@
+{
+	"id": "com.palm.app.whatsapp.config",
+	"version": "1.0.0",
+	"vendor": "gimco",
+	"type": "web",
+	"main": "index.html",
+	"title": "WhatsApp Config",
+	"icon": "whatsapp48.png",
+	"noWindow" : true,
+	"visible": false
+}

@@ -1,0 +1,5 @@
+{
+    "id": "com.palm.whatsapp.imcommand:1",
+    "extends": ["com.palm.imcommand:1"],
+    "owner": "com.palm.service.whatsapp"
+}
