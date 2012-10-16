@@ -1,17 +1,18 @@
 var loginStateChangedAssistant = function(future) {};
 
-// loginStateChangedAssistant.prototype.complete = function(activity) {
-// 	return true;
-// };
+loginStateChangedAssistant.prototype.complete = function(activity) {
+	return true;
+};
 
 loginStateChangedAssistant.prototype.run = function(response) {
-	response.onError(function(response) {
-		console.log("Error en loginStateChanged: " + response.exception);
-		response.nest(createLoginStateActivity(0));
-	});
-	
 	var args = this.controller.args;
 	console.log("loginStateChangedAssistant args: " + JSON.stringify(args));
+
+	if (args.$activity && args.$activity.activityId) {
+		PalmCall.call("palm://com.palm.activitymanager/",  "complete", {
+			activityId : args.$activity.activityId
+		});
+	}
 
 	var loginState = {};
 	var transport = {};
@@ -25,12 +26,12 @@ loginStateChangedAssistant.prototype.run = function(response) {
 		console.log(JSON.stringify(future.result));
 		// TODO: Here we're only get the first result ...
 		loginState = future.result.results[0];
-		
+
 		future.nest(DB.find(queryFromAccountId(TRANSPORT_KIND, loginState.accountId)));
 		// Analyze loginstate changes
 		future.then(function (future) {
 			transport = future.result.results[0];
-			
+
 			// Update the loginState cached.
 			var oldLoginState = loginStates[loginState.accountId] || {availability:null,state:null};
 			loginStates[loginState.accountId] = loginState;
@@ -71,46 +72,51 @@ loginStateChangedAssistant.prototype.run = function(response) {
 				//tuenti.setStatus(transport.sessionId, loginState.customMessage);
 			}
 			
-			future.nest(createLoginStateActivity(loginState._rev));
-			// future.result = { returnValue : true }
+			// Recreate activity
+			future.nest(createLoginStateActivity(loginState));
 		});
 	});
-	
+
 	response.nest(future);
 	return;
 };
 
-function createLoginStateActivity(rev) {
-	return PalmCall.call("palm://com.palm.activitymanager/",  "create", {
-		"start": true,
-		"replace" : true,
-		"activity": {
-			"name": "Whatsapp loginstate",
-			"description": "Watch for changes to the imloginstate",
-			"type": {
-	          	"explicit":true,
-	          	"power":true,
-	          	"foreground": true,
-	          	"persist" : true
-	        },
-	        "requirements": {
-	        	"internet":true
-	        },
-			"trigger": {
-				"method": "palm://com.palm.db/watch",
-				"key": "fired",
-				"params": {
-					"subscribe": true,
-					"query": {
-						"from": IM_LOGINSTATE_KIND,
-						"where": [{"prop":"_rev","op": ">","val":rev}]
+function createLoginStateActivity(loginState) {
+	 var f = DB.find(queryFromAccountId (IM_LOGINSTATE_KIND, loginState.accountId));
+	 f.then(function(f) {
+	 	var rev = f.result.results[0]._rev;
+		f.nest(PalmCall.call("palm://com.palm.activitymanager/",  "create", {
+			"start": true,
+			"replace" : true,
+			"activity": {
+				"name": "Whatsapp loginstate",
+				"description": "Watch for changes to the imloginstate",
+				"type": {
+		          	"explicit":true,
+		          	"power":true,
+		          	"foreground": true,
+		          	"persist" : true
+		        },
+//		        "requirements": {
+//		        	"internet":true
+//		        },
+				"trigger": {
+					"method": "palm://com.palm.db/watch",
+					"key": "fired",
+					"params": {
+						"subscribe": true,
+						"query": {
+							"from": IM_LOGINSTATE_KIND,
+							"where": [{"prop":"_rev","op": ">","val":rev}]
+						}
 					}
+				},
+				"callback": {
+					"method": "palm://com.palm.service.whatsapp/loginStateChanged",
+					"params": {}
 				}
-			},
-			"callback": {
-				"method": "palm://com.palm.service.whatsapp/loginStateChanged",
-				"params": {}
 			}
-		}
+		}));
 	});
+	return f;
 }

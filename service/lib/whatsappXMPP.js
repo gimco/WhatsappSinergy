@@ -21,7 +21,6 @@ WAZ.XMPP.prototype.login = function () {
 	this.conn.on("error", this._onend.bind(this));
 	
 	this.syncFuture = new Future().immediate({ ok : false });
-	this.onLoggingOn();
 };
 
 WAZ.XMPP.prototype.write = function (data) {

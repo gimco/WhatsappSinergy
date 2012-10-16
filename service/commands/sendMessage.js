@@ -3,7 +3,6 @@ var sendMessageAssistant = function(response){};
 
 //Hack to activity works
 sendMessageAssistant.prototype.complete = function(activity) {
-	console.log("COMPLETADO?");
 	return true; 
 };
 
@@ -11,8 +10,11 @@ sendMessageAssistant.prototype.run = function(response) {
 	var args = this.controller.args;
 	console.log("sendMessageAssistant args: " + JSON.stringify(args));
 
-	response.result = { returnValue : true };
-	return;
+	if (args.$activity && args.$activity.activityId) {
+		PalmCall.call("palm://com.palm.activitymanager/",  "complete", {
+			activityId : args.$activity.activityId
+		});
+	}
 
 	// Search for pending messages
 	var future = DB.find({
@@ -62,10 +64,8 @@ sendMessageAssistant.prototype.run = function(response) {
 		future.result = { returnValue : true };
 	});
 	
-	// future.then(function(future) {
-	// 	future.nest(createSendMessageActivity ());
-	// });
 	response.nest(future);
+	response.nest(createSendMessageActivity ());
 };
 
 function createSendMessageActivity () {
@@ -82,9 +82,9 @@ function createSendMessageActivity () {
 	          	"explicit":true,
 	          	"persist" : true
 	        },
-	        "requirements": {
-			    "internet": true
-			},
+	  //       "requirements": {
+			//     "internet": true
+			// },
 	        "trigger": {
 				"method": "palm://com.palm.db/watch",
 				"key": "fired",

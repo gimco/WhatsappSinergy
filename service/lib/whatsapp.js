@@ -408,7 +408,7 @@ WAZ.Messages.b64len = function (b64) {
 WAZ.Messages.XMPP_HELLO = "WA\1\1";
 
 //<stream-start to="s.whatsapp.net" resource="Android-2.6.8879" />
-WAZ.Messages.XMPP_STREAM = WAZ.Messages.template("+AUBoIqE#{clientid}")({clientid : "Android-2.6.8879"}); 
+WAZ.Messages.XMPP_STREAM = WAZ.Messages.template("+AUBoIqE#{clientid}")({clientid : "Android-2.8.4443"}); 
 
 //<stream:features><receipt_acks /></stream:features>
 WAZ.Messages.XMPP_FEATURES = WAZ.Messages.template("+AKW+AH4AX4=")();

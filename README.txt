@@ -1,3 +1,28 @@
+Process the loginstate succesly:
+
+There're three states:
+
+availability
+state
+whatsapp state
+
+Also we have the las state of loginstate.
+
+Because the node.js can crash the service, it's possible that there're inconsistence on the state.
+
+If the service crash, Could we know how to fix the state? Exist very combinations:
+
+On first interaction (after a boot):
+
+The system detect a change on loginstate row. For example, the user have changed his availability through messaging app.
+There aren't previous state of loginstate and the whatsapp state is offline.
+
+
+
+
+
+
+
 app] {"responseText":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<statusreport>\n<s p=\"615176139\" jid=\"34615176139@s.whatsapp.net\" t=\"26771346\"><![CDATA[:)]]></s>\n<s p=\"652140946\" jid=\"34652140946@s.whatsapp.net\" t=\"47932376\"><![CDATA[Solo urgentes]]></s>\n<s p=\"661375934\" jid=\"34661375934@s.whatsapp.net\" t=\"7249416\"><![CDATA[Batería baja]]></s>\n<s p=\"679899234\" jid=\"34679899234@s.whatsapp.net\" i=\"1\" t=\"3215476\"><![CDATA[? !!!  De vacaciones !!! ?]]></s>\n<s p=\"43434343\" jid=\"3443434343@s.whatsapp.net\" u=\"1\"></s><s p=\" 12345678912\" jid=\"3412345678912@s.whatsapp.net\" u=\"1\"></s><s p=\"652426363\" jid=\"34652426363@s.whatsapp.net\" u=\"1\"></s></statusreport>\n","status":200}
 [com.palm.service.what
 
