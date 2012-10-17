@@ -50,7 +50,9 @@ loginStateChangedAssistant.prototype.run = function(response) {
 				xmpp[loginState.accountId].login();
 				
 			} else if (loginState.state != PalmLoginState.OFFLINE
-					&& loginState.availability == PalmAvailability.OFFLINE) {
+					&& loginState.availability == PalmAvailability.OFFLINE
+				||
+				oldLoginState.state == null && loginState.state == PalmLoginState.OFFLINE) {
 				
 				console.log("Needs to logout");
 				xmpp[loginState.accountId].logout();

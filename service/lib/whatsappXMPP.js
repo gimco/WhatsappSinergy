@@ -27,8 +27,11 @@ WAZ.XMPP.prototype.write = function (data) {
 	try {
 		this.conn.write(data);
 	} catch (e) {
-		try { this.conn.end(); } catch (e) { }
-		this.onOffline();
+		try {
+			this.conn.end();
+		} catch (e) {
+			this._onend();
+		}
 	}
 };
 

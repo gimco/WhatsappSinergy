@@ -47,8 +47,8 @@ WAZ.XMPP.prototype.onLoginSuccess = function() {
 };
 
 WAZ.XMPP.prototype.onOffline = function() {
+	markBuddiesOffline (this.transport.accountId);
 	changeLoginState(this.transport.accountId, PalmLoginState.OFFLINE);
-	// Marcando cuenta como offline!
 };
 
 WAZ.XMPP.prototype.onPresence = function(id, name, status) {
